@@ -1,12 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import playlistsReducer, { Playlist } from './Slices/playlistsSlice';
+import MusicSlice from './Slice/MusicSlice';
+import PlaylistSlice from './Slice/PlaylistSlice';
+import FavoriteSlice from './Slice/FavoriteSlice';
+import CurrentMusicSlice from './Slice/CurrentMusicSlice';
 
-export interface State {
-    playlists: Playlist[];
-}
 
 export default configureStore({
     reducer: {
-        playlists: playlistsReducer,
+          MusicSlice : MusicSlice,
+          PlaylistSlice  : PlaylistSlice,
+          FavoriteSlice : FavoriteSlice,
+          CurrentMusicSlice : CurrentMusicSlice
     },
 });
